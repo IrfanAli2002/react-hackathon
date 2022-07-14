@@ -1,0 +1,543 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+/* custom btn */
+/* head section  */
+.headpera{
+  font-weight: 700;
+  text-align: center;
+  background: linear-gradient(to right, rgb(193, 180, 240) 20%, rgb(243, 240, 240) 40%, rgb(62, 12, 241) 60%, rgb(0, 0, 0) 80%);
+  background-size: 200% auto;
+
+  color: #000;
+  background-clip: text;
+  /* text-fill-color: transparent; */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 1s linear infinite;
+  
+  @keyframes shine {
+    to {
+      background-position: 200% center;
+    }
+  }
+}
+/* head section  */
+
+/* CSS */
+.headbtn,
+.headbtn:after {
+  width: 150px;
+  height: 76px;
+  line-height: 78px;
+  font-size: 20px;
+  font-family: 'Bebas Neue', sans-serif;
+  background: linear-gradient(45deg, transparent 5%, #0501ff 5%);
+  border: 0;
+  color: #fff;
+  letter-spacing: 3px;
+  box-shadow: 6px 0px 0px #00E6F6;
+  outline: transparent;
+  position: relative;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.headbtn:after {
+  --slice-0: inset(50% 50% 50% 50%);
+  --slice-1: inset(80% -6px 0 0);
+  --slice-2: inset(50% -6px 30% 0);
+  --slice-3: inset(10% -6px 85% 0);
+  --slice-4: inset(40% -6px 43% 0);
+  --slice-5: inset(80% -6px 5% 0);
+  
+  content: 'ALTERNATE TEXT';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 3%, #00E6F6 3%, #00E6F6 5%, #FF013C 5%);
+  text-shadow: -3px -3px 0px #F8F005, 3px 3px 0px #00E6F6;
+  clip-path: var(--slice-0);
+}
+
+.headbtn:hover:after {
+  animation: 1s glitch;
+  animation-timing-function: steps(2, end);
+}
+
+@keyframes glitch {
+  0% {
+    clip-path: var(--slice-1);
+    transform: translate(-20px, -10px);
+  }
+  10% {
+    clip-path: var(--slice-3);
+    transform: translate(10px, 10px);
+  }
+  20% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 10px);
+  }
+  30% {
+    clip-path: var(--slice-3);
+    transform: translate(0px, 5px);
+  }
+  40% {
+    clip-path: var(--slice-2);
+    transform: translate(-5px, 0px);
+  }
+  50% {
+    clip-path: var(--slice-3);
+    transform: translate(5px, 0px);
+  }
+  60% {
+    clip-path: var(--slice-4);
+    transform: translate(5px, 10px);
+  }
+  70% {
+    clip-path: var(--slice-2);
+    transform: translate(-10px, 10px);
+  }
+  80% {
+    clip-path: var(--slice-5);
+    transform: translate(20px, -10px);
+  }
+  90% {
+    clip-path: var(--slice-1);
+    transform: translate(-10px, 0px);
+  }
+  100% {
+    clip-path: var(--slice-1);
+    transform: translate(0);
+  }
+}
+
+@media (min-width: 768px) {
+  .headbtn,
+  .headbtn:after {
+    width: 200px;
+    height: 86px;
+    line-height: 88px;
+  }
+}
+
+
+
+
+
+/* CSS */
+
+
+
+.cardbtn1 {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cardbtn1::after,
+.cardbtn1::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.cardbtn1::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #212124;
+  border-radius: 10px;
+}
+
+.cardbtn1::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #312efd;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.cardbtn1:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.cardbtn1:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.cardbtn1:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+
+.cardbtn {
+  all: unset;
+  width: 100%;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cardbtn::after,
+.cardbtn::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.cardbtn::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #212124;
+  border-radius: 10px;
+}
+
+.cardbtn::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #312efd;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 50px;
+}
+
+.cardbtn:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.cardbtn:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.cardbtn:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+
+
+
+/* CSS */
+.appbtn {
+  padding: 0.2em 1.5em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.appbtn:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-appbtn 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-appbtn {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.appbtn:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgb(5, 8, 209);
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+/* custom btn */
+/* main Head start */
+
+.headerr{
+  height: 100vh;
+
+}
+.headerdiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  color: white;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.imgmain{
+  width: 100%;
+  height:100%;
+  
+}
+.book{
+  color: white;
+  position: absolute;
+  bottom: 90px;
+  left: 300px;
+}
+.bgwhite{
+  
+  background-color: #fff;
+}
+.maincards{
+  padding: 50px;
+  display: flex;
+  background-color: #fff;
+}
+.mainbody{
+  background: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.mainbtn{
+  background-color: transparent;
+  border-radius: 10px;
+  padding: 15px;
+  border-color: white;
+  color: white;
+}
+.mainbtn:hover{
+  transition: 0.8s;
+  background-color: rgb(206, 202, 1);
+  color: #000000;
+  border: none;
+  padding: 25px;
+}
+.div1{
+  position: relative;
+  
+}
+/* main Head end */
+/* main about start */
+.mainabout{
+  padding: 200px 70px;
+  background-color: #fff;
+}
+.abouth1{
+  margin-bottom: 100px;
+}
+.aboutpera{
+  font-size: 3em;
+  font-weight: bold;
+  
+}
+.aboutimg{
+  width: 100%;
+  height: 100%;
+  border-radius: 40px;
+}
+/* main about end */
+
+
+/* mainfooter start */
+
+.facebook:hover{
+  color: blue;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.whatapp:hover{
+  color: green;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.mainfooter{
+  background-color:#ebe4e4;
+  padding-top: 100px;
+}
+
+/* mainfooter end */
+
+
+/* Appbar CSS start */
+.appbar{
+  color: transparent;
+  position: sticky;
+}
+
+
+
+
+
+
+
+/* .appbarname{
+}
+.appbarhead{
+} */
+
+/* Appbar CSS end */
+
+
+/* form css */
+/* .main{
+} */
+/* form css */
+.cardextra{
+  display: flex;
+}
+
+/* admin section  */
+.inp{
+  color: white;
+  background-color: #fff;
+  border-radius: 10px;
+}
+.admindiv{
+  background: url('https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGhvdGVsfGVufDB8fDB8fA%3D%3D&w=1000&q=80')  no-repeat center center ;
+ background-size: cover ;
+ height: 100vh;
+ color: white;
+}
+
+.admintable{
+  font-size: 1.3em;
+  border-radius: 10px;
+  
+}
+.padd{
+  padding: 10px;
+  border: 1px black;
+}
+
+/* admin section  */
+
+
+
+/* book  */
+
+
+
+/* book  */
